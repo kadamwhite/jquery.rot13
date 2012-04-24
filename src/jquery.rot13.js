@@ -8,15 +8,18 @@
 
 (function($) {
 
-  window.rot13 = function(str) {
+  var rot13 = function(str) {
     var chars = str.split('');
     return chars.map(function(char) {
-      if(char.match(/[A-Z]/)) {
-        return String.fromCharCode((char.charCodeAt(0) - 52) % 26 + 65);
-      } else if(char.match(/[a-z]/)) {
-        return String.fromCharCode((char.charCodeAt(0) - 84) % 26 + 97);
-      } else {
+      var charCode;
+      if(!char.match(/[A-Za-z]/)) {
         return char;
+      }
+      charCode = char.charCodeAt(0);
+      if(charCode < 97) {
+        return String.fromCharCode((charCode - 52) % 26 + 65);
+      } else {
+        return String.fromCharCode((charCode - 84) % 26 + 97);
       }
     }).join('');
   };
@@ -31,6 +34,11 @@
   // Static method.
   $.awesome = function() {
     return 'awesome';
+  };
+
+    // Static method.
+  $.rot13 = function(str) {
+    return rot13(str);
   };
 
   // Custom selector.

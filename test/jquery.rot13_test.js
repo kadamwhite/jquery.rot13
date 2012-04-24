@@ -37,6 +37,20 @@
     strictEqual(this.elems.awesome().text(), 'awesomeawesomeawesome', 'should be thoroughly awesome');
   });
 
+  module('jQuery.rot13');
+
+  test('mono-directional encoding', 1, function() {
+    strictEqual($.rot13('Testing!%*#@'), 'Grfgvat!%*#@', 'should encode correctly');
+  });
+
+  test('bi-directional encoding', 1, function() {
+    strictEqual($.rot13('Grfgvat!%*#@'), 'Testing!%*#@', 'should decode encoded text correctly');
+  });
+
+  test('bi-directional encoding', 1, function() {
+    strictEqual($.rot13($.rot13('Testing!%*#@')), 'Testing!%*#@', 'should decode encoded text correctly');
+  });
+
   module('jQuery.awesome');
 
   test('is awesome', 1, function() {
