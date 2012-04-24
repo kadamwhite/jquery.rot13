@@ -8,6 +8,19 @@
 
 (function($) {
 
+  window.rot13 = function(str) {
+    var chars = str.split('');
+    return chars.map(function(char) {
+      if(char.match(/[A-Z]/)) {
+        return String.fromCharCode((char.charCodeAt(0) - 52) % 26 + 65);
+      } else if(char.match(/[a-z]/)) {
+        return String.fromCharCode((char.charCodeAt(0) - 84) % 26 + 97);
+      } else {
+        return char;
+      }
+    }).join('');
+  };
+
   // Collection method.
   $.fn.awesome = function() {
     return this.each(function() {
