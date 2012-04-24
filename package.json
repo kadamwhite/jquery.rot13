@@ -1,0 +1,29 @@
+{
+  "name": "jquery.rot13",
+  "title": "jQuery Rot13 Plugin",
+  "description": "Rot13-based text encoding and decoding",
+  "version": "0.1.0",
+  "homepage": "https://github.com/kadamwhite/jquery.rot13",
+  "author": {
+    "name": "K.Adam White",
+    "email": "kadamwhite@gmail.com",
+    "url": "http://www.kadamwhite.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:kadamwhite/jquery.rot13.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kadamwhite/jquery.rot13/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/kadamwhite/jquery.rot13/blob/master/LICENSE-MIT"
+    }
+  ],
+  "dependencies": {
+    "jquery": "~1.5"
+  },
+  "keywords": []
+}
