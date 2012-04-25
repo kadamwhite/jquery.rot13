@@ -27,20 +27,23 @@
 
   // Collection method
   $.fn.rot13 = function() {
-    var html = $(this).html();
-    if(html.match(/[<>]/)) {
-      // Here be HTML!
-      // Catch any raw text preceding an initial HTML tag
-      html = html.replace(/^([^<]*)</, rot13);
-      // Catch any intermediate strings
-      html = html.replace(/>([^<]*)</g, rot13);
-      // Catch any raw text after a final HTML tag
-      html = html.replace(/>([^<]*)$/, rot13);
-    } else {
-      // No HTML 'round these parts
-      html = rot13(html);
-    }
-    return $(this).html(html);
+    $(this).each(function() {
+      var html = $(this).html();
+      if(html.match(/[<>]/)) {
+        // Here be HTML!
+        // Catch any raw text preceding an initial HTML tag
+        html = html.replace(/^([^<]*)</, rot13);
+        // Catch any intermediate strings
+        html = html.replace(/>([^<]*)</g, rot13);
+        // Catch any raw text after a final HTML tag
+        html = html.replace(/>([^<]*)$/, rot13);
+      } else {
+        // No HTML 'round these parts
+        html = rot13(html);
+      }
+      return $(this).html(html);
+    });
+    return this;
   };
 
   // Static method.
