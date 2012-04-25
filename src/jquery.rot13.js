@@ -25,13 +25,6 @@
     }).join('');
   };
 
-  // Collection method.
-  $.fn.awesome = function() {
-    return this.each(function() {
-      $(this).html('awesome');
-    });
-  };
-
   // Collection method
   $.fn.rot13 = function() {
     var html = $(this).html();
@@ -51,18 +44,8 @@
   };
 
   // Static method.
-  $.awesome = function() {
-    return 'awesome';
-  };
-
-  // Static method.
   $.rot13 = function(str) {
     return rot13(str);
-  };
-
-  // Custom selector.
-  $.expr[':'].awesome = function(elem) {
-    return elem.textContent.indexOf('awesome') >= 0;
   };
 
 }(jQuery));
