@@ -1,6 +1,6 @@
 # jQuery Rot13 Plugin
 
-Rot13-based text encoding and decoding
+This plugin is designed to simplify encoding and decoding text on your webpage using [rot13](http://rot13.com/), for example to make it easier to [obscure or decode spoilers](http://gameshelf.jmac.org/2012/04/lets-use-rot13-for-game-spoilers) or other text in a blog post, game or application.
 
 ## Getting Started
 Download the [production version][min] or the [development version][max].
@@ -15,7 +15,8 @@ In your web page:
 <script src="dist/jquery.rot13.min.js"></script>
 <script>
 jQuery(function($) {
-  $.awesome(); // "awesome"
+  var str = $.rot13(str); // rot13 encodes and returns the input string
+  $('p').rot13(); // rot13 encodes the text of every <p> element on the page
 });
 </script>
 ```
@@ -24,7 +25,12 @@ jQuery(function($) {
 _(Coming soon)_
 
 ## Examples
-_(Coming soon)_
+```javascript
+$('p').rot13(); // rot13 encodes the text of every <p> element on the page
+```
+```javascript
+var str = $.rot13(str); // rot13 encodes and returns the input string
+```
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [grunt](https://github.com/cowboy/grunt).
