@@ -22,7 +22,7 @@
       raises(block, [expected], [message])
   */
 
-  module('jQuery#awesome', {
+  module('jQuery#rot13', {
     setup: function() {
       this.elems = $('#qunit-fixture').children();
     }
@@ -37,18 +37,63 @@
     strictEqual(this.elems.awesome().text(), 'awesomeawesomeawesome', 'should be thoroughly awesome');
   });
 
-  module('jQuery.rot13');
-
-  test('mono-directional encoding', 1, function() {
-    strictEqual($.rot13('ABCDEFGHIJKLMNOPQRSTUVWXYZ!%*#@abcdefghijklmnopqrstuvwxyz'), 'NOPQRSTUVWXYZABCDEFGHIJKLM!%*#@nopqrstuvwxyzabcdefghijklm', 'should encode correctly');
+  module('jQuery.rot13', {
+    setup: function() {
+      this.normal = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ!%*#@abcdefghijklmnopqrstuvwxyz';
+      this.encoded = 'NOPQRSTUVWXYZABCDEFGHIJKLM!%*#@nopqrstuvwxyzabcdefghijklm';
+    }
   });
 
-  test('mono-directional decoding', 1, function() {
-    strictEqual($.rot13('NOPQRSTUVWXYZABCDEFGHIJKLM!%*#@nopqrstuvwxyzabcdefghijklm'), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ!%*#@abcdefghijklmnopqrstuvwxyz', 'should decode correctly');
+  test('mono-directional encoding', 1, function() {
+    strictEqual($.rot13(this.normal), this.encoded, 'should encode correctly');
+  });
+
+  test('mono-directional DE-coding', 1, function() {
+    strictEqual($.rot13(this.encoded), this.normal, 'should decode correctly');
   });
 
   test('bi-directional encoding', 1, function() {
-    strictEqual($.rot13($.rot13('ABCDEFGHIJKLMNOPQRSTUVWXYZ!%*#@abcdefghijklmnopqrstuvwxyz')), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ!%*#@abcdefghijklmnopqrstuvwxyz', 'should decode encoded text correctly');
+    strictEqual($.rot13($.rot13(this.encoded)), this.encoded, 'should decode encoded text correctly');
+  });
+
+  module('jQuery.fn.rot13: pure text', {
+    setup: function() {
+      this.normal = $('#rot13-source p.normal').text('ABCDEFGHIJKLMNOPQRSTUVWXYZ!%*#@abcdefghijklmnopqrstuvwxyz');
+      this.encoded = $('#rot13-source p.encoded').text('NOPQRSTUVWXYZABCDEFGHIJKLM!%*#@nopqrstuvwxyzabcdefghijklm');
+    }
+  });
+
+  test('properly encode pure text', 1, function() {
+    strictEqual(this.normal.rot13().html(), this.encoded.html());
+  });
+
+  test('properly DE-code pure text', 1, function() {
+    strictEqual(this.encoded.rot13().html(), this.normal.html());
+  });
+
+  test('encode then decode the same text', 1, function() {
+    var target = this.normal.html();
+    strictEqual(this.normal.rot13().rot13().html(), target);
+  });
+
+  module('jQuery.fn.rot13: HTML', {
+    setup: function() {
+      this.normal = $('#rot13-source p.normal').html('ABCDEFGHIJKL<b>MNOPQRSTUVWXYZ!%*#@abc</b>defghijklmnopqrstuvwxyz');
+      this.encoded = $('#rot13-source p.encoded').html('NOPQRSTUVWXY<b>ZABCDEFGHIJKLM!%*#@nop</b>qrstuvwxyzabcdefghijklm');
+    }
+  });
+
+  test('properly encode text, ignoring HTML tags', 1, function() {
+    strictEqual(this.normal.rot13().html(), this.encoded.html());
+  });
+
+  test('properly DE-code text, ignoring HTML tags', 1, function() {
+    strictEqual(this.encoded.rot13().html(), this.normal.html());
+  });
+
+  test('encode then decode the same text, ignoring HTML tags', 1, function() {
+    var target = this.normal.html();
+    strictEqual(this.normal.rot13().rot13().html(), target);
   });
 
   module('jQuery.awesome');
