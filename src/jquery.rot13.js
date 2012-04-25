@@ -10,17 +10,18 @@
 
   var rot13 = function(str) {
     var chars = str.split('');
-    return chars.map(function(char) {
+    return $.map(chars, function(char) {
       var charCode;
       if(!char.match(/[A-Za-z]/)) {
         return char;
       }
       charCode = char.charCodeAt(0);
       if(charCode < 97) {
-        return String.fromCharCode((charCode - 52) % 26 + 65);
+        charCode = (charCode - 52) % 26 + 65;
       } else {
-        return String.fromCharCode((charCode - 84) % 26 + 97);
+        charCode = (charCode - 84) % 26 + 97;
       }
+      return String.fromCharCode(charCode);
     }).join('');
   };
 
@@ -36,7 +37,7 @@
     return 'awesome';
   };
 
-    // Static method.
+  // Static method.
   $.rot13 = function(str) {
     return rot13(str);
   };

@@ -40,15 +40,15 @@
   module('jQuery.rot13');
 
   test('mono-directional encoding', 1, function() {
-    strictEqual($.rot13('Testing!%*#@'), 'Grfgvat!%*#@', 'should encode correctly');
+    strictEqual($.rot13('ABCDEFGHIJKLMNOPQRSTUVWXYZ!%*#@abcdefghijklmnopqrstuvwxyz'), 'NOPQRSTUVWXYZABCDEFGHIJKLM!%*#@nopqrstuvwxyzabcdefghijklm', 'should encode correctly');
+  });
+
+  test('mono-directional decoding', 1, function() {
+    strictEqual($.rot13('NOPQRSTUVWXYZABCDEFGHIJKLM!%*#@nopqrstuvwxyzabcdefghijklm'), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ!%*#@abcdefghijklmnopqrstuvwxyz', 'should decode correctly');
   });
 
   test('bi-directional encoding', 1, function() {
-    strictEqual($.rot13('Grfgvat!%*#@'), 'Testing!%*#@', 'should decode encoded text correctly');
-  });
-
-  test('bi-directional encoding', 1, function() {
-    strictEqual($.rot13($.rot13('Testing!%*#@')), 'Testing!%*#@', 'should decode encoded text correctly');
+    strictEqual($.rot13($.rot13('ABCDEFGHIJKLMNOPQRSTUVWXYZ!%*#@abcdefghijklmnopqrstuvwxyz')), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ!%*#@abcdefghijklmnopqrstuvwxyz', 'should decode encoded text correctly');
   });
 
   module('jQuery.awesome');
