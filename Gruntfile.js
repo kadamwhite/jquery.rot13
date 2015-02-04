@@ -53,15 +53,22 @@ module.exports = function(grunt) {
   grunt.registerTask('default', [
     'build'
   ]);
+
   grunt.registerTask('dev', [
     'build',
     'watch'
   ]);
+
   grunt.registerTask('build', [
     'jshint',
     'qunit',
     'concat',
     'uglify'
+  ]);
+
+  grunt.registerTask('test', [
+    'jshint',
+    'qunit'
   ]);
 
 };

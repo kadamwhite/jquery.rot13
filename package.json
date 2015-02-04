@@ -6,7 +6,6 @@
   "homepage": "https://github.com/kadamwhite/jquery.rot13",
   "author": {
     "name": "K.Adam White",
-    "email": "kadamwhite@gmail.com",
     "url": "http://www.kadamwhite.com"
   },
   "repository": {
@@ -25,15 +24,20 @@
   "engines": {
     "node": ">= 0.10.0"
   },
-  "dependencies": {
-    "jquery": "~1.5",
-    "grunt": "~0.4.5",
-    "grunt-contrib-jshint": "~0.10.0",
-    "grunt-contrib-uglify": "~0.5.0",
-    "grunt-contrib-concat": "~0.5.0",
-    "grunt-contrib-watch": "~0.6.1",
-    "grunt-contrib-qunit": "*",
-    "load-grunt-tasks": "~0.6.0"
+  "scripts": {
+    "build": "grunt build",
+    "watch": "grunt dev",
+    "test": "grunt test"
   },
-  "keywords": []
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-cli": "^0.1.13",
+    "grunt-contrib-concat": "~0.5.0",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-qunit": "^0.5.2",
+    "grunt-contrib-uglify": "~0.5.0",
+    "grunt-contrib-watch": "~0.6.1",
+    "jquery": "~1.5",
+    "load-grunt-tasks": "~0.6.0"
+  }
 }
