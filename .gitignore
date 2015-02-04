@@ -20,3 +20,6 @@ Desktop.ini
 
 ### Node Package Manager ###
 node_modules
+
+### Bower ###
+bower_components

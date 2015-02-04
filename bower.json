@@ -1,0 +1,37 @@
+{
+  "name": "jquery.rot13",
+  "version": "1.0.0",
+  "homepage": "https://github.com/kadamwhite/jquery.rot13",
+  "authors": [
+    "K.Adam White <kadamwhite@gmail.com>"
+  ],
+  "description": "Rot13-based text encoding and decoding",
+  "main": "dist/jquery.rot13.js",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "jquery",
+    "rot13",
+    "cipher"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "libs",
+    "src",
+    "test",
+    "node_modules",
+    "bower_components",
+    "**/.*",
+    "Gruntfile.js",
+    "LICENSE-MIT",
+    "package.json",
+    "README.md"
+  ],
+  "dependencies": {
+    "jquery": ">=1.5.0"
+  },
+  "devDependencies": {
+    "qunit": ">=1.17.0"
+  }
+}
