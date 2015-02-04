@@ -1,0 +1,22 @@
+### PhPStorm ###
+.idea/
+
+### Windows ###
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+### OSX ###
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+### Node Package Manager ###
+node_modules

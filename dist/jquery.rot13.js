@@ -1,6 +1,10 @@
-/*! jQuery Rot13 Plugin - v0.1.0 - 2012-04-24
-* https://github.com/kadamwhite/jquery.rot13
-* Copyright (c) 2012 K.Adam White; Licensed MIT */
+/*
+ * jquery.rot13
+ * https://github.com/kadamwhite/jquery.rot13
+ *
+ * Copyright (c) 2012 K.Adam White
+ * Licensed under the MIT license.
+ */
 
 (function($) {
 
