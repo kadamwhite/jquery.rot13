@@ -4,7 +4,7 @@ This plugin is designed to simplify encoding and decoding text on your webpage u
 
 ## Getting Started
 
-Download the [production version][min] or the [development version][max].
+Download the [production version][min] or the [development version][max]. (This package is also available via [Bower](http://bower.io): `bower install --save jquery.rot13`)
 
 [min]: https://raw.github.com/kadamwhite/jquery.rot13/master/dist/jquery.rot13.min.js
 [max]: https://raw.github.com/kadamwhite/jquery.rot13/master/dist/jquery.rot13.js
