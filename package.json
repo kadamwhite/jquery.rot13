@@ -21,9 +21,6 @@
       "url": "https://github.com/kadamwhite/jquery.rot13/blob/master/LICENSE-MIT"
     }
   ],
-  "engines": {
-    "node": ">= 0.10.0"
-  },
   "scripts": {
     "build": "grunt build",
     "watch": "grunt dev",
