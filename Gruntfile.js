@@ -11,7 +11,7 @@ module.exports = function(grunt) {
       banner: '/*! <%= pkg.title || pkg.name %> - v<%= pkg.version %> - ' +
         '<%= pkg.homepage ? "* " + pkg.homepage : "" %>' +
         '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;' +
-        ' Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */'
+        ' Licensed <%= pkg.licenses.map(function(license) { return license.type; }).join(", ") %> */'
     },
     concat: {
       dist: {
