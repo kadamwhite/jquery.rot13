@@ -2,7 +2,7 @@
   "name": "jquery.rot13",
   "title": "jQuery Rot13 Plugin",
   "description": "Rot13-based text encoding and decoding",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "homepage": "https://github.com/kadamwhite/jquery.rot13",
   "author": {
     "name": "K.Adam White",
